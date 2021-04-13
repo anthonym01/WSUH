@@ -1,5 +1,5 @@
 const { Browser } = Capacitor.Plugins;//plugins
-const remote_host = 'http://192.168.0.13:1999';//a host
+const remote_host = 'http://';//a host
 
 async function request(what) {//make a request to server for data
 
@@ -35,3 +35,7 @@ async function post(what, where) {//post data to server
 }
 
 async function open_link(link) { await Browser.open({ url: link }); }
+
+window.addEventListener('load',function(){
+    
+})
