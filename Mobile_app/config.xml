@@ -1,8 +1,8 @@
 <?xml version='0.0.1' encoding='utf-8'?>
-<widget id="com.ANTHONYM.APPNAME" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Appname</name>
+<widget id="com.WUSH.sight" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>WUSH_sight</name>
     <description>
-        description Is Discription
+        Sight assistant app
     </description>
     <author email="samuelmatheson15@gmail.com" href="mailto:samuelmatheson15@gmail.com">
         Samuel A. Matheson
