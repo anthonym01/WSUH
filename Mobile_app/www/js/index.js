@@ -83,15 +83,21 @@ let config = {
     },
 }
 
+
+/* Navigation buttons */
+document.getElementById('Begin_sight_btn').addEventListener('click',Begin_sight)
+
+function Begin_sight(){
+    //prepare for sight
+    document.getElementById('home_view').style.display="none";
+    document.getElementById('setting_view').style.display="none";
+    document.getElementById('sight_view').style.display="block";
+}
+
 let Ui = {
     initialize: async function () {//start ui logic
         console.warn('Ui initalize')
 
-
-
-        
-        
-        document.getElementById('setting_btn').addEventListener('click', Ui.navigate.setting)
         document.getElementById('Animations_btn').addEventListener('click', Ui.setting.animation.flip)
         document.getElementById('backup_btn').addEventListener('click', function () {
             directory_manager.startup('select-folder')//select folder to place bakcup file

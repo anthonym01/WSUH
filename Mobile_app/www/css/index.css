@@ -1,4 +1,4 @@
-* {
+* {/* No hilight on Tap  */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -14,6 +14,7 @@
     --grey: rgb(29, 29, 29);
     --setting-icon: url('../img/setting-black.webp');
     --wush-icon: url('../img/sight-dark.webp');
+    --cainman: url('../img/Cainman-black.webp');
     --elivation_color: 70%;
     --button_depth: translate(0, 1%);
 }
@@ -79,8 +80,20 @@ body {
 }
 
 .Begin_sight_btn:active {
-    transition: translate 0ms;
+    /*transition: translate 0ms;*/
     transform: translate(0, 1vw);
+}
+
+.Begin_sight_btn .stickman{
+    position: absolute;
+    height: calc(100% - 11.5vw - 30vw);
+    width: 100%;
+    left: 0;
+    top: 10vw;
+    background-image: var(--cainman);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .setting_btn {
@@ -95,7 +108,7 @@ body {
 }
 
 .setting_btn:active {
-    transition: translate 0ms;
+    /*transition: translate 0ms;*/
     transform: translate(0, 1vw);
 }
 
