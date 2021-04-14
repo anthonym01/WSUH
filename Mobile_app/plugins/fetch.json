@@ -31,26 +31,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-theme-detection": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-theme-detection@^1.2.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-battery-status": {
     "source": {
       "type": "registry",
       "id": "cordova-plugin-battery-status"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-file": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-file@^6.0.2"
     },
     "is_top_level": true,
     "variables": {}
@@ -63,10 +47,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-externalstoragepath-plugin": {
+  "cordova-plugin-camera": {
     "source": {
       "type": "registry",
-      "id": "cordova-externalstoragepath-plugin@^1.0.4"
+      "id": "cordova-plugin-camera@5.0.1"
     },
     "is_top_level": true,
     "variables": {}
