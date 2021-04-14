@@ -85,14 +85,28 @@ let config = {
 
 
 /* Navigation buttons */
-document.getElementById('Begin_sight_btn').addEventListener('click',Begin_sight)
 
-function Begin_sight(){
+document.getElementById('Begin_sight_btn').addEventListener('click',Begin_sight)
+function Begin_sight(){//go to sight
     //prepare for sight
     document.getElementById('home_view').style.display="none";
     document.getElementById('setting_view').style.display="none";
     document.getElementById('sight_view').style.display="block";
 }
+
+function Go_to_home(){//return to home screen
+    document.getElementById('home_view').style.display="block";
+    document.getElementById('setting_view').style.display="none";
+    document.getElementById('sight_view').style.display="none";
+    stop_sight()
+}
+
+
+/* SIght manaement */
+function stop_sight(){//suspend sight operations
+    console.log('Stopping sight operations')
+}
+
 
 let Ui = {
     initialize: async function () {//start ui logic
@@ -499,7 +513,11 @@ let properties = {
 }
 
 async function back() {// called when back button pressed
-    exit_strategy();
+    if(document.getElementById('sight_view').style.display=="block"){
+        Go_to_home();
+    }else{
+        exit_strategy();
+    }
 }
 
 function exit_strategy() {//when called twice exits the app
