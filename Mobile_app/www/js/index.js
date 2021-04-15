@@ -88,11 +88,19 @@ let config = {
 
 /* Navigation buttons */
 document.getElementById('Begin_sight_btn').addEventListener('click',Begin_sight)
+document.getElementById('setting_btn').addEventListener('click',Setting_menu)
 function Begin_sight(){//go to sight
     //prepare for sight
     document.getElementById('home_view').style.display="none";
     document.getElementById('setting_view').style.display="none";
     document.getElementById('sight_view').style.display="block";
+}
+
+function Setting_menu() { // goes to the setting menu
+    // go to settings
+    document.getElementById('home_view').style.display="none";
+    document.getElementById('setting_menu').style.display="flex";
+    document.getElementById('sight_view').style.display="none";
 }
 
 function Go_to_home(){//return to home screen
