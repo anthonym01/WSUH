@@ -149,6 +149,30 @@ body {
     overflow-y: scroll;
 }
 
+/* Setting menu */
+#setting_menu {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* this for the buttons for the menu */
+.setting_menu_btn {
+    width: 85%;
+    padding: 25px 0;
+    font-size: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 2px solid white;
+    color:white;
+    background-color: rgba(255,255,255, 0.1);
+} 
+
 .settingtitle {
     position: relative;
     width: 100%;
