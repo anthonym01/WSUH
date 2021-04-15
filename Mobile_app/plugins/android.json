@@ -7,16 +7,7 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-externalstoragepath-plugin": {
-      "PACKAGE_NAME": "com.WUSH.sight"
-    },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.WUSH.sight"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.WUSH.sight"
-    },
-    "cordova-plugin-theme-detection": {
       "PACKAGE_NAME": "com.WUSH.sight"
     },
     "cordova-plugin-screensize": {
@@ -29,6 +20,10 @@
       "PACKAGE_NAME": "com.WUSH.sight"
     },
     "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.WUSH.sight"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.WUSH.sight"
     }
   },
