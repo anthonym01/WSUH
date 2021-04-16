@@ -92,7 +92,7 @@ document.getElementById('setting_btn').addEventListener('click',Setting_menu)
 function Begin_sight(){//go to sight
     //prepare for sight
     document.getElementById('home_view').style.display="none";
-    document.getElementById('setting_view').style.display="none";
+    document.getElementById('setting_menu').style.display="none";
     document.getElementById('sight_view').style.display="block";
 }
 
@@ -105,7 +105,7 @@ function Setting_menu() { // goes to the setting menu
 
 function Go_to_home(){//return to home screen
     document.getElementById('home_view').style.display="block";
-    document.getElementById('setting_view').style.display="none";
+    document.getElementById('setting_menu').style.display="none";
     document.getElementById('sight_view').style.display="none";
     stop_sight()
 }

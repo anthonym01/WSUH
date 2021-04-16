@@ -1,0 +1,9 @@
+.sightbox{
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    color: hsl(300, 100%, 50%);
+}
