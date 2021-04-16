@@ -88,6 +88,7 @@ let config = {
 
 /* Navigation buttons */
 document.getElementById('Begin_sight_btn').addEventListener('click',Begin_sight)
+document.getElementById('stopsightbtn').addEventListener('click',Stop_sight)
 document.getElementById('setting_btn').addEventListener('click',Setting_menu)
 function Begin_sight(){//go to sight
     //prepare for sight
@@ -95,7 +96,10 @@ function Begin_sight(){//go to sight
     document.getElementById('setting_menu').style.display="none";
     document.getElementById('sight_view').style.display="block";
 }
-
+function Stop_sight(){
+    Go_to_home()
+    //stop sight operations
+}
 function Setting_menu() { // goes to the setting menu
     // go to settings
     document.getElementById('home_view').style.display="none";
