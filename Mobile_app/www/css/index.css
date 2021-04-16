@@ -1,5 +1,6 @@
 * {/* No hilight on Tap  */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
 }
 
 @font-face {
@@ -14,7 +15,7 @@
     --grey: rgb(29, 29, 29);
     --setting-icon: url('../img/setting-black.webp');
     --wush-icon: url('../img/sight-dark.webp');
-    --cainman: url('../img/Cainman-black.webp');
+    --cainman: url('../img/baldman.png');
     --elivation_color: 70%;
     --button_depth: translate(0, 1%);
 }
