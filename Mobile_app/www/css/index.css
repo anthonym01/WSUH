@@ -125,8 +125,9 @@ body {
     bottom: 0;
     height: 20vw;
     width: 20vw;
-    background-size: contain;
+    background-size: 90%;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 #setting_btn .mainicon {
@@ -170,8 +171,8 @@ body {
 /* this for the buttons for the menu */
 .setting_menu_btn {
     width: 85%;
-    padding:9vw 0;
-    font-size: 9vw;
+    padding:7vw 0;
+    font-size: 8vw;
     display: grid;
     place-items: center;
     border-radius: 8vw;

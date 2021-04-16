@@ -4,6 +4,29 @@
     left: 0;
     position: absolute;
     width: 100%;
-    height: 90%;
-    color: hsl(300, 100%, 50%);
+    height:  calc(100vh - 23vw);
+    background-color: hsl(300, 100%, 50%);
+}
+
+.stopsightbtn{
+    display: block;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 11.5vw;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    transition: background-color 300ms;
+    border: none;
+}
+
+.stopsightbtn:active{
+    color:var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0ms;
 }
