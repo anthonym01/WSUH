@@ -34,8 +34,6 @@ body {
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
     height: 100vh;
     width: 100vw;
-    color: var(--text-color);
-    background-color: var(--background-color);
 }
 
 /* mainview && navbar*/
@@ -47,6 +45,7 @@ body {
     width: 100vw;
     overflow-y: scroll;
     display: none;
+    background-color: skyblue;
     color: var(--text-color);
     background-color: var(--background-color);
 }
@@ -57,7 +56,9 @@ body {
     right: 0;
     width: 100vw;
     height: 11.5vw;
-    background-color: var(--grey);
+    /* background-color: var(--grey); */
+    background-color: hsl(197, 71%,43%);
+    color: hsl(197, 71%,23%);
     font-size: 8vw;
     display: flex;
     justify-content: center;
