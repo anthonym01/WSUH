@@ -125,6 +125,8 @@ let properties = {
 async function back() {// called when back button pressed
     if(document.getElementById('sight_view').style.display=="block"){
         Go_to_home();
+    }else if(document.getElementById('setting_menu').style.display=="flex"){
+        Go_to_home();
     }else{
         exit_strategy();
     }
