@@ -96,7 +96,7 @@ body {
     min-height: 10vw;
     height: calc(100% - 11.5vw - 20vw);
     width: 90vw;
-    border-radius: 5vw;
+    border-radius: 1vw;
     background-color: var(--text-color);
     color: var(--background-color);
     transition: translate 500ms;
