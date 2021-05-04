@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wush</title>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <script type="module"
+    src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js">
+  </script>
+
+  <link rel="icon" href="assets/icon/icon.png" type="image/png" sizes="32x32">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/sight.css">
+  <meta name="theme-color" content="#000">
+
+</head>
+
+<body class="">
+
+  <div class="topbbar">
+    <div>WUSH sight</div>
+  </div>
+
+  <!-- Sight view -->
+  <div class="mainview" id="sight_view">
+    <div class="sightbox"></div>
+    <button class="stopsightbtn" id="stopsightbtn">
+      <div>Stop Sight</div>
+    </button>
+  </div>
+
+  <!-- homeview -->
+  <div class="mainview" id="home_view" style="display: block;">
+    <div class="Begin_sight_btn" id="Begin_sight_btn">
+      <div class="stickman"></div>
+      <div class="mainicon"></div>
+      <div class="mainbtn_text">
+        <div>Begin sight</div>
+      </div>
+    </div>
+    <div class="setting_btn" id="setting_btn">
+      <div class="mainicon"></div>
+      <div class="mainbtn_text">
+        <div>Settings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Setting menu -->
+  <div class="mainview" id="setting_menu">
+    <button class="setting_menu_btn">
+      Manage Accounts
+    </button>
+    <button class="setting_menu_btn">
+      Sight options
+    </button>
+    <button class="setting_menu_btn">
+      Manage vest
+    </button>
+    <button class="setting_menu_btn">
+      Call Support
+    </button>
+  </div>
+
+
+
+  <script src="capacitor.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

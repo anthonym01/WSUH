@@ -1,0 +1,13 @@
+{
+  "appId": "com.WUSH.sight",
+  "appName": "WUSHsight",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/usr/bin/android-studio",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

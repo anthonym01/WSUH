@@ -1,0 +1,22 @@
+{
+  "name": "wushsight",
+  "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
+  "main": "index.js",
+  "scripts": {
+    "push_to_studio": "npx cap copy && npx cap open android",
+    "update_project": "npx cap update",
+    "Serve":"npx cap serve"
+  },
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "2.4.5",
+    "@capacitor/cli": "^2.4.7",
+    "@capacitor/core": "^2.4.7"
+  }
+}
