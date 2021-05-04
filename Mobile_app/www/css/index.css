@@ -8,13 +8,23 @@
     font-family: Lexend_Deca;
 }
 
+@font-face {
+    src: url(../fonts/IndieFlower-Regular.ttf);
+    font-family: IndieFlower;
+}
+
+@font-face {
+    src: url(../fonts/PatrickHand-Regular.ttf);
+    font-family: PatrickHand;
+}
+
 :root {
     --text-color: rgb(255, 255, 255);
     --background-color: rgb(0, 0, 0);
     --accent-color: hsl(0, 0%, 100%);
     --grey: rgb(29, 29, 29);
     --accent-color: rgb(0, 183, 255);
-    --setting-icon: url('../img/setting-black.webp');
+    --setting-icon: url('../img/setting-gear.svg');
     --wush-icon: url('../img/sight-dark.webp');
     --cainman: url('../img/baldman.png');
     --elivation_color: 70%;
@@ -37,6 +47,15 @@ body {
     width: 100vw;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+.app-name{
+    font-family: IndieFlower, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.sight-name{
+    font-family: PatrickHand, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* mainview && navbar*/
@@ -77,12 +96,12 @@ body {
     min-height: 10vw;
     height: calc(100% - 11.5vw - 20vw);
     width: 90vw;
-    border-radius: 5vw;
+    border-radius: 1vw;
     background-color: var(--text-color);
     color: var(--background-color);
     transition: translate 500ms;
     transform: translate(0, 0);
-    box-shadow: 0vw 0vw 2vw 1vw var(--accent-color);
+    /* box-shadow: 0vw 0vw 2vw 1vw var(--accent-color); */
 }
 
 .Begin_sight_btn:active {
@@ -108,10 +127,10 @@ body {
     width: 90vw;
     height: 20vw;
     left: 5vw;
-    border-radius: 5vw;
+    border-radius: 1vw;
     background-color: var(--text-color);
     color: var(--background-color);
-    box-shadow: 0vw 0vw 2vw 1vw var(--accent-color);
+    /* box-shadow: 0vw 0vw 2vw 1vw var(--accent-color); */
 }
 
 .setting_btn:active {
