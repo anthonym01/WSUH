@@ -1,4 +1,4 @@
-package com.ANTHONYM.APPNAME;
+package com.WUSH.sight;
 
 import android.os.Bundle;
 
