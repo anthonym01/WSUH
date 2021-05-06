@@ -6,7 +6,7 @@
   "scripts": {
     "push_to_studio": "npx cap copy && npx cap open android",
     "update_project": "npx cap update",
-    "Serve":"npx cap serve"
+    "Serve": "npx cap serve"
   },
   "keywords": [
     "capacitor",
