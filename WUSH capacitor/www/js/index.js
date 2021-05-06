@@ -113,23 +113,12 @@ async function back() { // called when back button pressed
 function exit_strategy() { //when called twice exits the app
     console.warn('Exit strategy triggered')
     if (properties.exit == true) {
-        close()
+        App.exitApp()
     } else {
         properties.exit = true;
         toast("Press back button again to exit", 2000)
         setTimeout(() => {
             properties.exit = false
         }, 2000)
-    }
-}
-
-function close() { // Close the app 
-    console.trace('App closure triggered via')
-    if (navigator.app) {
-        navigator.app.exitApp()
-    } else if (navigator.device) {
-        navigator.device.exitApp()
-    } else {
-        window.close()
     }
 }
