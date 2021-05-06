@@ -18,7 +18,7 @@
     --background-color: rgb(0, 0, 0);
     --accent-color: hsl(0, 0%, 100%);
     --grey: rgb(29, 29, 29);
-    --accent-color: rgb(132, 187, 245);
+    --accent-color: rgb(132, 189, 250);
     --setting-icon: url('../img/setting-gear.svg');
     --wush-icon: url('../img/sight-dark.webp');
     --cainman: url('../img/baldman.png');
@@ -65,7 +65,8 @@ body {
     right: 0;
     width: 100vw;
     height: 11.5vw;
-    background-color: var(--accent-color);
+    background-image: linear-gradient(to right, var(--accent-color) , #fff);
+    /* background-color:  */
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: flex-start;
@@ -134,7 +135,8 @@ body {
     bottom: 0vw;
     width: 100vw;
     height: 20vw;
-    background-color: var(--text-color);
+    background-image: linear-gradient(to right, var(--accent-color) , #fff);
+    /* background-color: var(--text-color); */
     color: var(--background-color);
     display: flex;
     justify-content: center;
@@ -143,6 +145,7 @@ body {
 }
 
 .setting_btn:active {
+    background-color: var(--text-color);
     /*transition: translate 0ms;*/
     transform: translate(0, 1vw);
 }
