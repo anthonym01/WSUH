@@ -22,6 +22,10 @@
     --setting-icon: url('../img/setting-gear.svg');
     --wush-icon: url('../img/sight-dark.webp');
     --cainman: url('../img/baldman.png');
+    --support-icon: url('../img/customer.svg');
+    --wsuh-vest: url('../img/wsuh-vest.svg');
+    --account-icon: url('../img/account-icon.svg');
+    --sight-option: url('../img/eye.svg');
     --elivation_color: 70%;
     --button_depth: translate(0, 1%);
 }
@@ -193,23 +197,53 @@ body {
 /* this for the buttons for the menu */
 .setting_menu_btn {
     width: 85%;
-    padding:7vw 0;
-    font-size: 8vw;
-    display: grid;
-    place-items: center;
-    border-radius: 8vw;
-    margin-top: 4vw;
+    height: 15vh;
+    margin-top: 7vw;
+    font-size: 7vw;
+
     border: 0.5vw solid var(--text-color);
     color:var(--text-color);
     background-color: var(--background-color);
     transition: background-color 300ms;
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
 } 
+
+.setting_menu_btn .btn-action-det{
+    width: 70%;
+}
+
+.setting_menu_btn .icon-container{
+    height: 14vh;
+    width: 20vw;
+
+}
+
+.account-icon{
+    background-image: var(--account-icon);
+}
+
+.sight-option-icon{
+    background-image: var(--sight-option);
+}
+
+.wsuh-vest{
+    background-image: var(--wsuh-vest);
+}
+
+.call-support-icon{
+    background-image: var(--support-icon);
+}
+
 .setting_menu_btn:active{
     border: 0.5vw solid var(--text-color);
     color:var(--background-color);
-    background-color: var(--accent-color);
+
+    background-image: linear-gradient(180deg, rgb(92, 252, 105) , #fff);
     transition: background-color 0ms;
 }
+
 /*    <--  Landscape layout (with min-width) -->     */
 
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
