@@ -214,10 +214,14 @@ body {
     width: 70%;
 }
 
+.setting_menu_btn:first-child .btn-action-det{
+    width: 60%;
+    margin-left: 3vw;
+}
+
 .setting_menu_btn .icon-container{
     height: 14vh;
     width: 20vw;
-
 }
 
 .account-icon{
