@@ -1,6 +1,8 @@
 const { Plugins, AppState } = Capacitor; //plugins
 const { App } = Plugins;
 
+const sight_preview = document.getElementById('sight_preview')
+
 async function open_link(link) {
     await Browser.open({
         url: link
@@ -60,6 +62,36 @@ let config = {
     },
 }
 
+let prototype_camera_functionality = {
+    state:null,
+    start:function(){
+        if (navigator.mediaDevices.getUserMedia) {//Media devices
+            //Get video stream from default webcam
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function (stream) {
+                console.log('Stream started: ', stream)
+                sight_preview.srcObject = stream;//video stream
+
+                //
+                //return stream;
+
+            }).catch(function (err0r) {
+                console.warn('Stream failed', err0r);
+                return err0r
+            });
+        }
+    },
+    stop:function(){
+        var stream = sight_preview.srcObject;
+        var tracks = stream.getTracks();
+
+        for (var i = 0; i < tracks.length; i++) {
+            var track = tracks[i];
+            track.stop();
+        }
+
+        stream.srcObject = null;
+    }
+}
 
 /* Navigation buttons */
 document.getElementById('Begin_sight_btn').addEventListener('click', Begin_sight)
@@ -71,10 +103,12 @@ function Begin_sight() { //go to sight
     document.getElementById('home_view').style.display = "none";
     document.getElementById('setting_menu').style.display = "none";
     document.getElementById('sight_view').style.display = "block";
+    prototype_camera_functionality.start()
 }
 
 function Stop_sight() {
     Go_to_home()
+    prototype_camera_functionality.stop()
     //stop sight operations
 }
 
@@ -89,13 +123,6 @@ function Go_to_home() { //return to home screen
     document.getElementById('home_view').style.display = "block";
     document.getElementById('setting_menu').style.display = "none";
     document.getElementById('sight_view').style.display = "none";
-    stop_sight()
-}
-
-
-/* SIght manaement */
-function stop_sight() { //suspend sight operations
-    console.log('Stopping sight operations')
 }
 
 
