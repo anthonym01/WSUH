@@ -1,5 +1,5 @@
 const { Plugins, AppState } = Capacitor; //plugins
-const { App } = Plugins;
+const { App, TextToSpeech } = Plugins;
 
 const sight_preview = document.getElementById('sight_preview')
 
