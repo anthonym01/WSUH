@@ -1,5 +1,5 @@
 const { Plugins, AppState } = Capacitor; //plugins
-const { App } = Plugins;
+const { App, SpeechRecognition } = Plugins;
 
 const sight_preview = document.getElementById('sight_preview')
 
@@ -10,6 +10,12 @@ async function open_link(link) {
 }
 
 App.addListener('backButton', function () { console.log('Back button'); back() })
+
+console.log(
+    // SpeechRecognition.available();
+    SpeechRecognition.getSupportedLanguages()
+);
+
 
 window.onload = maininitalizer();
 
@@ -103,13 +109,31 @@ function Begin_sight() { //go to sight
     document.getElementById('home_view').style.display = "none";
     document.getElementById('setting_menu').style.display = "none";
     document.getElementById('sight_view').style.display = "block";
-    prototype_camera_functionality.start()
+    prototype_camera_functionality.start();
+
+    if(!SpeechRecognition.hasPermission()){
+        SpeechRecognition.requestPermission();
+    }
+
+    if(SpeechRecognition.hasPermission()){
+        SpeechRecognition.start({
+            language: 'en-US',
+            maxResults: 2,
+            prompt: 'Say something',
+            partialResults: true,
+            popup: true,
+            });
+    }
 }
 
+//stop sight operations
 function Stop_sight() {
-    Go_to_home()
-    prototype_camera_functionality.stop()
-    //stop sight operations
+    prototype_camera_functionality.stop();
+
+    if(SpeechRecognition.hasPermission())
+        SpeechRecognition.stop();
+
+    Go_to_home();
 }
 
 function Setting_menu() { // goes to the setting menu
