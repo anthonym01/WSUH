@@ -23,12 +23,15 @@ https://anthonym01.github.io/WSUH/
 ## How WUSH works
 
 1. Input from camera streamed to server
-2. Process camera feed via python image recognition libraries or open souce image A.I. such as:
-
-  - 
-
+2. Process camera feed via python image recognition libraries or open souce image A.I.
 3. Speak information about objects ahead of user like roads, obstuctions or anything else which may be a hazard to a blind people.
 
+### How navigation works
+
+- Navigation comes later
+
 ## Vest
+
+- Vest comes later  
 
 the vest will [induce Synesthesia](https://royalsocietypublishing.org/doi/10.1098/rstb.2019.0030) to give people who are completely blind the illusion of sight
