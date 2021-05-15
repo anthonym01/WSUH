@@ -1,12 +1,9 @@
 # WUSH (We see You Hear)
 
-https://anthonym01.github.io/WSUH/
-
-## Dates
+WUSH is a sight assistance app intended to help visually impared people "Read" text
 
 |Event|Date|
 |---|---|
-|Intelectual property Rights workshop|May 14|
 |Video shoot session at Utech|May 20|
 |Mock Pitch Event at Utech|May 27|
 |FINAL submission of Pitch Deck/Prototype Demo|June 4|
@@ -17,21 +14,27 @@ https://anthonym01.github.io/WSUH/
 - Get Image recignition working
 - [talkback support](https://github.com/capacitor-community/text-to-speech)
 - Get [speechrecognition](https://github.com/pbakondy/cordova-plugin-speechrecognition) working
-- Navigation assistance via [Google maps api](https://developers.google.com/maps/gmp-get-started)
-- rework camera feed with [Continuous image classifier](https://medium.com/@davifelipemsousa/continuous-image-classifier-in-cordova-d4442735ba79)
+- Navigation assistance via [Google maps api](https://developers.google.com/maps/gmp-get-started) if possible
+- rework camera feed with [Continuous image classifier](https://medium.com/@davifelipemsousa/continuous-image-classifier-in-cordova-d4442735ba79) or do a native camera implementation
 
-## How WUSH works
+## Reading assistance
 
-1. Input from camera streamed to server
-2. Process camera feed via python image recognition libraries or open souce image A.I.
-3. Speak information about objects ahead of user like roads, obstuctions or anything else which may be a hazard to a blind people.
+Reading assistance, works by reading aloud Text the device can see.  
 
-### How navigation works
+1. An image is captured and sent to the server to be processed.
+2. Text in said image is identifed by the server.
+3. Identified text is spoken by the Wush App.
 
-- Navigation comes later
+### Example 1
+
+### Example 2
 
 ## Vest
 
-- Vest comes later  
+The vest is intended to identify obstacles around a person and vibrates in the direction of said obstacle.
 
-the vest will [induce Synesthesia](https://royalsocietypublishing.org/doi/10.1098/rstb.2019.0030) to give people who are completely blind the illusion of sight
+the vest will work by [induceing Synesthesia with vibrations](https://royalsocietypublishing.org/doi/10.1098/rstb.2019.0030) to give people who are completely blind or visually impaired a sense of the obstacles around them
+
+1. Input from cameras Need to be processed almost in real time
+2. Process camera feed via python image recognition libraries and open souce image A.I.
+3. Speak information about objects ahead of user like cars or moving obstuctions, and as well as vibrating in the direction of obstacles such as tables, walls, trees and chairs.
