@@ -26,11 +26,17 @@ Reading assistance, works by reading aloud Text the device can see.
 3. Identified text is spoken by the Wush App.
 
 ### Example 1
+
 1. Image captured
+
 ![Book cover](https://raw.githubusercontent.com/anthonym01/WSUH/main/docs/img/scenes/Book%20cover%20base.jpg)
+
 2. Text identified by server
+
 ![Book cover text identified](https://raw.githubusercontent.com/anthonym01/WSUH/main/docs/img/scenes/Book%20cover%20Identified%20text.jpg)
+
 3. Text Spoken
+
 ![Book cover text spoken](https://raw.githubusercontent.com/anthonym01/WSUH/main/docs/img/scenes/Book%20cover%20wush%20speaks.jpg)
 
 ### Example 2
