@@ -43,7 +43,7 @@ Reading assistance, works by reading aloud Text the device can see.
 
 1. Image captured
 
-![Sign](https://raw.githubusercontent.com/anthonym01/WSUH/main/docs/img/scenes/Book%20cover%20base.jpg)
+![Sign](https://raw.githubusercontent.com/anthonym01/WSUH/main/docs/img/scenes/sign%20base.jpg)
 
 2. Text identified by server
 
