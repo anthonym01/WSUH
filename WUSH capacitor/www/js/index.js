@@ -1,6 +1,8 @@
 const { Plugins, AppState } = Capacitor; //plugins
 const { App } = Plugins;
-import { speak, stop, getSupportedLanguages, getSupportedVoices, isLanguageSupported } from './tts';
+// import { speak, stop, getSupportedLanguages, getSupportedVoices, isLanguageSupported } from './tts.js';
+
+import { tts } from './tts.js';
 
 const sight_preview = document.getElementById('sight_preview')
 
@@ -107,13 +109,13 @@ function Begin_sight() { //go to sight
     document.getElementById('setting_menu').style.display = "none";
     document.getElementById('sight_view').style.display = "block";
     prototype_camera_functionality.start();
-    speak();
+    tts.speak();
 }
 
 function Stop_sight() {
     Go_to_home();
     prototype_camera_functionality.stop();
-    stop();
+    tts.stop();
     //stop sight operations
 }
 

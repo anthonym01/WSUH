@@ -35,7 +35,7 @@ const tts = () => {
     stop,
     getSupportedLanguages,
     getSupportedVoices,
-    isLanguageSupported
+    isLanguageSupported,
   };
 };
 
