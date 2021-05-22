@@ -35,6 +35,9 @@ function maininitalizer() { //Runs after 'Device ready'
         post({ phone: 'phone phones home' }, 'post/test')
     */
     //size_check()
+    if(!SpeechRecognition.hasPermission()){
+        SpeechRecognition.requestPermission();
+    }
 }
 
 /* General properties */
@@ -111,27 +114,14 @@ function Begin_sight() { //go to sight
     document.getElementById('sight_view').style.display = "block";
     prototype_camera_functionality.start();
 
-    if(!SpeechRecognition.hasPermission()){
-        SpeechRecognition.requestPermission();
-    }
-
-    if(SpeechRecognition.hasPermission()){
-        SpeechRecognition.start({
-            language: 'en-US',
-            maxResults: 2,
-            prompt: 'Say something',
-            partialResults: true,
-            popup: true,
-            });
-    }
+    speech.methods.activateSpeechRecognition();
 }
 
 //stop sight operations
 function Stop_sight() {
     prototype_camera_functionality.stop();
 
-    if(SpeechRecognition.hasPermission())
-        SpeechRecognition.stop();
+    speech.methods.stopSpeechRecognition();
 
     Go_to_home();
 }
@@ -175,85 +165,86 @@ function exit_strategy() { //when called twice exits the app
 }
 
 
-// const speech = {
-//     data () {
-//       return {
-//         speechSentence: null,
-//         activatedSpeechRecognition: false,
-//         speechRecognitionListener: null,
-//         stopSpeechRecognitionListener: null
-//       }
-//     },
-//     methods: {
-//       startSpeechRecognition(speechSentence) {
-//         this.speechSentence = speechSentence;
-//         SpeechRecognition.hasPermission().then(permission => {
-//           if(permission.permission) {
-//             this.activateSpeechRecognition();
-//           } else {
-//             this.requestSpeechRecognitionPermission(true);
-//           }
-//         }).catch(() => {
-//           this.requestSpeechRecognitionPermission(true)
-//         })
-//       },
-//       requestSpeechRecognitionPermission(launch) {
-//         SpeechRecognition.requestPermission().then(() => {
-//           if (launch) {
-//             this.activateSpeechRecognition();
-//           }
-//         }).catch(() => {
+const speech = {
+    data () {
+      return {
+        speechSentence: null,
+        activatedSpeechRecognition: false,
+        speechRecognitionListener: null,
+        stopSpeechRecognitionListener: null
+      }
+    },
+    methods: {
+      startSpeechRecognition(speechSentence) {
+        this.speechSentence = speechSentence;
+        SpeechRecognition.hasPermission().then(permission => {
+          if(permission.permission) {
+            this.activateSpeechRecognition();
+          } else {
+            this.requestSpeechRecognitionPermission(true);
+          }
+        }).catch(() => {
+          this.requestSpeechRecognitionPermission(true);
+        })
+      },
+      requestSpeechRecognitionPermission(launch) {
+        SpeechRecognition.requestPermission().then(() => {
+          if (launch) {
+            this.activateSpeechRecognition();
+          }
+        }).catch(() => {
   
-//         });
-//       },
-//       activateSpeechRecognition() {
-//         this.activatedSpeechRecognition = true;
-//         this.speak(this.speechSentence.phrase);
-//         this.speechRecognitionListener = SpeechRecognition.addListener('speech-recognition-result', (res) => {
-//           if (this.speechSentence.results) {
-//             this.speechSentence.results.forEach(item => {
-//               if (item.matchings.some(match => res.matches[0].toLowerCase().includes(match))) {
-//                 this.speak(item.phrase);
-//                 item.callback();
-//                 this.stopSpeechRecognition();
-//               }
-//             })
-//           }
-//         });
-//         this.stopSpeechRecognitionListener = SpeechRecognition.addListener('speech-recognition-stopped', () => {
-//           this.stopSpeechRecognition()
-//         });
-//         SpeechRecognition.start({
-//           language: "fr-FR",
-//           maxResults: 1000,
-//           prompt: "Parlez",
-//           partialResults: true,
-//           popup: false,
-//         }).then(res => {
+        });
+      },
+      activateSpeechRecognition() {
+        this.activatedSpeechRecognition = true;
+        // this.speak(this.speechSentence.phrase);
+        this.speechRecognitionListener = SpeechRecognition.addListener('speech-recognition-result', (res) => {
+          if (this.speechSentence.results) {
+            this.speechSentence.results.forEach(item => {
+              if (item.matchings.some(match => res.matches[0].toLowerCase().includes(match))) {
+                // this.speak(item.phrase);
+                item.callback();
+                this.stopSpeechRecognition();
+              }
+            })
+          }
+        });
+        this.stopSpeechRecognitionListener = SpeechRecognition.addListener('speech-recognition-stopped', () => {
+          this.stopSpeechRecognition()
+        });
+        SpeechRecognition.start({
+          language: "en-US",
+          maxResults: 1000,
+          prompt: "Hey Let's Begin",
+          partialResults: true,
+          popup: true,
+        }).then(res => {
   
-//         }).catch(() => {
-//           this.stopSpeechRecognition()
-//         });
-//       },
-//       stopSpeechRecognition() {
-//         this.activatedSpeechRecognition = false;
-//         if (this.speechRecognitionListener) {
-//           this.speechRecognitionListener.remove();
-//         }
-//         if (this.stopSpeechRecognitionListener) {
-//           this.stopSpeechRecognitionListener.remove();
-//         }
-//         SpeechRecognition.stop();
-//       },
-//       async speak(text) {
-//         await TextToSpeech.speak({
-//           text: text,
-//           lang: 'fr_FR',
-//           rate: 1.0,
-//           pitch: 1.0,
-//           volume: 1.0,
-//           category: 'ambient',
-//         });
-//       }
-//     }
-//   };
+        }).catch(() => {
+          this.stopSpeechRecognition();
+        //   this.speak("We are sorry, there is a problem on our part. Please bear with us. Thank you.");
+        });
+      },
+      stopSpeechRecognition() {
+        this.activatedSpeechRecognition = false;
+        if (this.speechRecognitionListener) {
+          this.speechRecognitionListener.remove();
+        }
+        if (this.stopSpeechRecognitionListener) {
+          this.stopSpeechRecognitionListener.remove();
+        }
+        SpeechRecognition.stop();
+      },
+    //   async speak(text) {
+    //     await TextToSpeech.speak({
+    //       text: text,
+    //       lang: 'en_US',
+    //       rate: 1.0,
+    //       pitch: 1.0,
+    //       volume: 1.0,
+    //       category: 'ambient',
+    //     });
+    //   }
+    }
+  };
