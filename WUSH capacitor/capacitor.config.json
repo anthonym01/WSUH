@@ -1,6 +1,6 @@
 {
-  "appId": "com.WUSH.sight",
-  "appName": "WUSHsight",
+  "appId": "com.WSUH.sight",
+  "appName": "WSUHsight",
   "bundledWebRuntime": false,
   "npmClient": "yarn",
   "webDir": "www",

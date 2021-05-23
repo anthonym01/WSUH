@@ -6,7 +6,8 @@
   "scripts": {
     "push_to_studio": "npx cap copy && npx cap open android",
     "update_project": "npx cap update",
-    "Serve": "npx cap serve"
+    "Serve": "npx cap serve",
+    "cap": "npx cap sync && npx cap update android"
   },
   "keywords": [
     "capacitor",
@@ -16,9 +17,11 @@
   "license": "ISC",
   "dependencies": {
     "@capacitor-community/speech-recognition": "0.0.4",
-    "@capacitor/android": "2.4.5",
-    "@capacitor/cli": "^2.4.7",
-    "@capacitor/core": "^2.4.7",
-    "@ionic-native/core": "^4.20.0"
+    "@capacitor-community/text-to-speech": "^1.1.1",
+    "@capacitor/android": "^3.0.0-rc.4",
+    "@capacitor/cli": "^3.0.0-rc.4",
+    "@capacitor/core": "^3.0.0-rc.4",
+    "@ionic-native/core": "^4.20.0",
+    "jetifier": "^2.0.0"
   }
 }

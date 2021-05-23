@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">WUSHsight</string>
-    <string name="title_activity_main">WUSHsight</string>
-    <string name="package_name">com.WUSH.sight</string>
-    <string name="custom_url_scheme">com.WUSH.sight</string>
+    <string name="app_name">WSUHsight</string>
+    <string name="title_activity_main">WSUHsight</string>
+    <string name="package_name">com.WSUH.sight</string>
+    <string name="custom_url_scheme">com.WSUH.sight</string>
 </resources>
