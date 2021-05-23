@@ -2,12 +2,13 @@
   "name": "wushsight",
   "version": "1.0.0",
   "description": "An Amazing Capacitor App",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "push_to_studio": "npx cap copy && npx cap open android",
     "update_project": "npx cap update",
     "Serve": "npx cap serve",
-    "cap": "npx cap sync && npx cap update android"
+    "cap": "npx cap sync && npx cap update android",
+    "bundle": "browserify www/js/index.js -o www/js/bundle.js"
   },
   "keywords": [
     "capacitor",
