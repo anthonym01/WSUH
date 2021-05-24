@@ -1,9 +1,19 @@
 //import { App } from '@capacitor/app';
 //const App = require('@capacitor/app');
 const { Plugins, AppState } = Capacitor;
-const { App, SpeechRecognition, Camera, CameraResultType } = Plugins;
+const { App, SpeechRecognition, Camera, CameraResultType, CameraSource } = Plugins;
 const _textToSpeech = require("@capacitor-community/text-to-speech");
 const TextToSpeech = _textToSpeech.TextToSpeech;
+
+
+var CloudmersiveImageApiClient = require('cloudmersive-image-api-client');
+var defaultClient = CloudmersiveImageApiClient.ApiClient.instance;
+
+// Configure API key authorization: Apikey
+var Apikey = defaultClient.authentications['Apikey'];
+Apikey.apiKey = '3d2919b6-2ea8-43a9-90d0-40b89c9da52f';
+
+var apiInstance = new CloudmersiveImageApiClient.RecognizeApi();
 
 
 const sight_preview = document.getElementById('sight_preview')
@@ -83,11 +93,29 @@ let prototype_camera_functionality = {
     }
 }
 
+//Using CloudmersiveImageApiClient to get description of image
+const getImageInfo = (image) =>{
+    var imageFile = image;
+
+
+    var callback = function(error, data, response) {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('API called successfully. Returned data: ' + data);
+      }
+    };
+    console.log(imageFile);
+    // apiInstance.recognizeDescribe(imageFile, callback);
+} 
+
+//Uses Cap Camera Plugin to take image and send to CloudmersiveImageApiClient
 async function takepicture() {
     const image = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: true,
-        resultType: CameraResultType.Uri
+        quality: 100,
+        allowEditing: false,
+        resultType: CameraResultType.Uri,
+        source: CameraSource.CAMERA
     });
 
     // image.webPath will contain a path that can be set as an image src.
@@ -97,8 +125,9 @@ async function takepicture() {
     var imageUrl = image.webPath;
 
     // Can be set to the src of an image now
-    imageElement.src = imageUrl;
+    // imageElement.src = imageUrl;
 
+    // getImageInfo(imageUrl);
 }
 
 /* Navigation buttons */
