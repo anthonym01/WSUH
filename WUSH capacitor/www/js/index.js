@@ -98,6 +98,7 @@ async function takepicture() {
 
     // Can be set to the src of an image now
     imageElement.src = imageUrl;
+
 }
 
 /* Navigation buttons */
@@ -112,9 +113,12 @@ function Begin_sight() {
     document.getElementById('sight_view').style.display = "block";
     //prototype_camera_functionality.start();
 
+    
+    speech.methods.speak('Start sight');
+
     takepicture()
 
-    //speech.methods.speak('Start sight')
+    
 
     //speech.methods.speak("Good day and welcome to We So. Speech Recognition will now begin.");
     //speech.methods.startSpeechRecognition("Good day and welcome to We So Speech Recognition will now begin.");

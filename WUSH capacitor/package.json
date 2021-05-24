@@ -16,7 +16,7 @@
     "mobile"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@capacitor-community/speech-recognition": "0.0.4",
     "@capacitor-community/text-to-speech": "^1.1.1",
@@ -28,6 +28,7 @@
     "@ionic-native/core": "^4.20.0",
     "@ionic/pwa-elements": "^3.0.2",
     "browserify": "^17.0.0",
+    "cloudmersive-image-api-client": "^1.1.0",
     "jetifier": "^2.0.0"
   }
 }
