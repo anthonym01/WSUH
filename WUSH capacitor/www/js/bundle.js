@@ -727,7 +727,7 @@ const speech = {
           maxResults: 1000,
           prompt: "Hey Let's Begin",
           partialResults: true,
-          popup: true,
+          popup: false,
         }).then(res => {
   
         }).catch(() => {
