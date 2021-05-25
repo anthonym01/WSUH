@@ -4,16 +4,16 @@ const { App, SpeechRecognition, Camera, CameraResultType, CameraSource } = Plugi
 const _textToSpeech = require("@capacitor-community/text-to-speech");
 const TextToSpeech = _textToSpeech.TextToSpeech;
 
-
+// Cloudmersiv
 var CloudmersiveImageApiClient = require('cloudmersive-image-api-client');
 var defaultClient = CloudmersiveImageApiClient.ApiClient.instance;
-
-// Configure API key authorization: Apikey
 var Apikey = defaultClient.authentications['Apikey'];
 Apikey.apiKey = '3d2919b6-2ea8-43a9-90d0-40b89c9da52f';
-
 var apiInstance = new CloudmersiveImageApiClient.RecognizeApi();
 
+//DeepAI
+const deepai = require('deepai');
+deepai.setApiKey('6f2aee1f-d1d7-4be6-bc91-fd99d84810da');
 
 const sight_preview = document.getElementById('sight_preview')
 
@@ -117,22 +117,33 @@ async function takepicture() {
         source: CameraSource.CAMERA,
     });
 
-    console.log(image)
+    //console.log('raw Image data ',image.webPath,image.resultType,image.path)
 
-    var imagedata = `data:image/${image.format};base64,${image.base64String}`;//image as base64 data
-    document.getElementById('what-was-seen').src = imagedata;
+    //var imagedata = `data:image/${image.format};base64,${image.base64String}`;//image as base64 data
+    //document.getElementById('what-was-seen').src = imagedata;
+    
+    document.getElementById('what-was-seen').src = image.webPath
 
-    let imgscr = URL.createObjectURL(new Blob([image.base64String], { type: `image/${image.format}` }))//image as a wep path
+    //let imgscr = URL.createObjectURL(new Blob([image.base64String], { type: `.${image.format}""`/*`"image/${image.format}"`*/ }))//image as a wep path
+    //let imgscr = URL.createObjectURL(imagedata)//
 
-    console.log('Image url path: ',imgscr)
+    //Download the image for testing
+    document.getElementById('downloader').href = image.webPath;
+    document.getElementById('downloader').click();//invokes action
 
-    apiInstance.recognizeDescribe(imagedata, function (error, data, response) {//send image to cloudmersive
-        if (error) {
-            console.error(error);
-        } else {
-            console.log('API called successfully. Returned data: ' + data);
-        }
-    });
+    console.log('Image url path: ', image.webPath)
+
+    var resp = await deepai.callStandardApi("neuraltalk", { image:  image.webPath });
+    console.log('Neura talk responce',resp);
+
+    /*9
+        apiInstance.recognizeDescribe(imagedata, function (error, data, response) {//send image to cloudmersive
+            if (error) {
+                console.error(error);
+            } else {
+                console.log('API called successfully. Returned data: ' + data);
+            }
+        });*/
 }
 
 /* Navigation buttons */
