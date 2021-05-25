@@ -1,5 +1,4 @@
-//import { App } from '@capacitor/app';
-//const App = require('@capacitor/app');
+
 const { Plugins, AppState } = Capacitor;
 const { App, SpeechRecognition, Camera, CameraResultType, CameraSource } = Plugins;
 const _textToSpeech = require("@capacitor-community/text-to-speech");
@@ -94,20 +93,20 @@ let prototype_camera_functionality = {
 }
 
 //Using CloudmersiveImageApiClient to get description of image
-const getImageInfo = (image) =>{
-    var imageFile = image;
+const getImageInfo = (image) => {
+
+    console.log('Sending: ', image, ' to cloudmersive')
 
 
-    var callback = function(error, data, response) {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log('API called successfully. Returned data: ' + data);
-      }
-    };
-    console.log(imageFile);
-    // apiInstance.recognizeDescribe(imageFile, callback);
-} 
+    //console.log(imageFile);
+    apiInstance.recognizeDescribe(imageFile, function (error, data, response) {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('API called successfully. Returned data: ' + data);
+        }
+    });
+}
 
 //Uses Cap Camera Plugin to take image and send to CloudmersiveImageApiClient
 async function takepicture() {
@@ -115,19 +114,25 @@ async function takepicture() {
         quality: 100,
         allowEditing: false,
         resultType: CameraResultType.Uri,
-        source: CameraSource.CAMERA
+        source: CameraSource.CAMERA,
     });
 
-    // image.webPath will contain a path that can be set as an image src.
-    // You can access the original file using image.path, which can be
-    // passed to the Filesystem API to read the raw data of the image,
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    var imageUrl = image.webPath;
+    console.log(image)
 
-    // Can be set to the src of an image now
-    // imageElement.src = imageUrl;
+    var imagedata = `data:image/${image.format};base64,${image.base64String}`;//image as base64 data
+    document.getElementById('what-was-seen').src = imagedata;
 
-    // getImageInfo(imageUrl);
+    let imgscr = URL.createObjectURL(new Blob([image.base64String], { type: `image/${image.format}` }))//image as a wep path
+
+    console.log('Image url path: ',imgscr)
+
+    apiInstance.recognizeDescribe(imagedata, function (error, data, response) {//send image to cloudmersive
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('API called successfully. Returned data: ' + data);
+        }
+    });
 }
 
 /* Navigation buttons */
@@ -142,12 +147,12 @@ function Begin_sight() {
     document.getElementById('sight_view').style.display = "block";
     //prototype_camera_functionality.start();
 
-    
+
     speech.methods.speak('Start sight');
 
     takepicture()
 
-    
+
 
     //speech.methods.speak("Good day and welcome to We So. Speech Recognition will now begin.");
     //speech.methods.startSpeechRecognition("Good day and welcome to We So Speech Recognition will now begin.");
