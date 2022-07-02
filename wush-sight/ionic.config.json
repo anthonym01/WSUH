@@ -1,0 +1,8 @@
+{
+  "name": "WUSH sight",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "d633e5e0"
+}
